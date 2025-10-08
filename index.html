@@ -18,6 +18,10 @@
 <!--  ----------------------------------------------------------------------  -->
 
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
@@ -25,6 +29,7 @@
 
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DHs000001vNdE" method="POST">
 
+<input type=hidden name='captcha_settings' value='{"keyname":"ARI_Communities","fallback":"true","orgId":"00DHs000001vNdE","ts":""}'>
 <input type=hidden name="oid" value="00DHs000001vNdE">
 <input type=hidden name="retURL" value="https://www.siliconcrossroads.us/become-a-member">
 
@@ -47,8 +52,24 @@
 <label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
 
 <label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+
+How did you hear about us?:<select  id="00NRn000001m1hB" name="00NRn000001m1hB" title="How did you hear about us?"><option value="">--None--</option><option value="ARI Referred">ARI Referred</option>
+<option value="Co-Working/Incubator">Co-Working/Incubator</option>
+<option value="Event">Event</option>
+<option value="News Article">News Article</option>
+<option value="Other">Other</option>
+<option value="State Agency (IEDC/SBDC)">State Agency (IEDC/SBDC)</option>
+<option value="Website">Website</option>
+</select><br>
+
+Title of Solution Being Requested:<input  id="00NRn000002yAeT" maxlength="255" name="00NRn000002yAeT" size="20" type="text" /><br>
+
+Org Name of Solution Being Requested:<input  id="00NRn000002yAhh" maxlength="255" name="00NRn000002yAhh" size="20" type="text" /><br>
+
+<div class="g-recaptcha" data-sitekey="6LffLtQrAAAAAJE1SXGTRJ2LJJaE21EUPCv_v9K7"></div><br>
 <input type="submit" name="submit">
 
 </form>
+
 </body>
 </html>
